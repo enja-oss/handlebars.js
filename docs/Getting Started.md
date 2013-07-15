@@ -1,3 +1,7 @@
+ +  元文書: [wycats/handlebars-site/index.haml · wycats/handlebars-site · GitHub]
+(https://github.com/wycats/handlebars-site/blob/master/src/pages/index.haml 
+"wycats/handlebars-site/index.haml · wycats/handlebars-site · GitHub")
+
 Handlebarsは、効果的にセマンティックなテンプレートを構築するために必要な機能をフラストレーションなく提供します。
 
 MustacheテンプレートとHandlebarsは互換性があります。MustacheテンプレートからHandlebarsにインポートして、Handlebarsの特別な機能を活用し始めることができます。
