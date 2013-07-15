@@ -1,17 +1,14 @@
-
-Handlebars provides the power necessary to let you build semantic templates effectively with no frustration.
+ +  元文書: [wycats/handlebars-site/index.haml · wycats/handlebars-site · GitHub]
+(https://github.com/wycats/handlebars-site/blob/master/src/pages/index.haml 
+"wycats/handlebars-site/index.haml · wycats/handlebars-site · GitHub")
 
 Handlebarsは、効果的にセマンティックなテンプレートを構築するために必要な機能をフラストレーションなく提供します。
 
-Mustache templates are compatible with Handlebars, so you can take a Mustache template, import it into Handlebars, and start taking advantage of the extra Handlebars features.
-
-MustacheテンプレートとHandlebarsは互換性があります。MustacheテンプレートからHandlebarsにインポートして、Handlebarsの特別な機能を活用して始めることができます。
+MustacheテンプレートとHandlebarsは互換性があります。MustacheテンプレートからHandlebarsにインポートして、Handlebarsの特別な機能を活用し始めることができます。
 
 ## はじめに
 
-Handlebars templates look like regular HTML, with embedded handlebars expressions.
-
-Handlebarsのテンプレートは普通のHTMLのように見ることができ、内部にHandlebarsの評価式が組み込まれています。
+Handlebarsのテンプレートは通常のHTMLの内部にHandlebarsの評価式が組み込まれたものです。
 
 ```` html
 <div class="entry">
@@ -22,11 +19,7 @@ Handlebarsのテンプレートは普通のHTMLのように見ることができ
 </div>
 ````
 
-A handlebars expression is a `{{`, some contents, followed by a `}}`
-
 ひとつのHandlebars式は `{{`、なにかのコンテンツ、最後に `}}` で構成されます。
-
-You can deliver a template to the browser by including it in a &lt;script&gt; tag.
 
 テンプレートを&lt;script&gt;タグの中にインクルードする方法で、ブラウザへ届けることもできます。
 
@@ -36,9 +29,7 @@ You can deliver a template to the browser by including it in a &lt;script&gt; ta
 </script>
 ````
 
-Compile a template in JavaScript by using `Handlebars.compile`
-
-`Handlebars.compile` を使うことでテンプレートをJavascriptへコンパイルします。
+`Handlebars.compile` を使うことでテンプレートをJavaScriptへコンパイルします。
 
 ```` javascript
 var source   = $(" 
@@ -47,15 +38,9 @@ var source   = $("
 var template = Handlebars.compile(source);
 ````
 
-It is also possible to precompile your templates. 
-This will result in a smaller required runtime library and significant savings from not having to compile the template in the browser. 
-This can be especially important when working with mobile devices.
-
 テンプレートをプリコンパイルすることも可能です。
-結果的に、必要なランタイムライブラリがより小さくなり、ブラウザ上でテンプレートをコンパイルする必要がないので大幅なコスト削減になります。
-これは、モバイルデバイス上で動作する場合、特に重要です。
-
-Get the HTML result of evaluating a Handlebars template by executing the template with a context.
+そうすることで、必要なランタイムライブラリがより小さくなり、ブラウザ上でテンプレートをコンパイルする必要がないので大幅なコスト削減になります。
+これは、モバイルデバイス上で動作させる場合に特に重要になります。
 
 コンテキストとテンプレートを同時に実行することで、Handlebarsテンプレートを評価してHTMLを得ます。
 
@@ -76,11 +61,8 @@ var html    = template(context);
 </div>
 ````
 
-Handlebars HTML-escapes values returned by a `{{expression}}`. 
-If you don't want Handlebars to escape a value, use the "triple-stash".
-
 Handlebarsでは `{{expression}}` を使うことでHTMLエスケープした結果を返します。
-Handlebarsでエスケープして欲しくない場合、"トリプルスラッシュ"を使用してください。`{{{`
+Handlebarsでエスケープして欲しくない場合、"トリプルスタッシュ"を使用してください。`{{{`
 
 
 ```` html
@@ -114,12 +96,9 @@ Handlebarsでエスケープして欲しくない場合、"トリプルスラッ
 </div>
 ````
 
-Handlebars will not escape a `Handlebars.SafeString`. 
-If you write a helper that generates its own HTML, you will usually want to return a `new Handlebars.SafeString(result)`. In such a circumstance, you will want to manually escape parameters.
-
 Handlebars は `Handlebars.SafeString` をエスケープしません。
-もし、独自のHTMLを生成するヘルパーを作成する場合、通常 `new Handlebars.SafeString(result)` した結果を欲するでしょう。
-このような状況では、手動でのエスケープパラメータが欲しくなるはずです。
+もし、独自のHTMLを生成するヘルパーを作成する場合、通常 `new Handlebars.SafeString(result)` した結果が必要でしょう。
+このような状況では手動でエスケープできるパラメータあればいいと思うでしょう。
 
 ````
 Handlebars.registerHelper('link', function(text, url) {
@@ -132,8 +111,5 @@ Handlebars.registerHelper('link', function(text, url) {
 });
 ````
 
-This will escape the passed in parameters, but mark the response as safe, 
-so Handlebars will not try to escape it even if the "triple-stash" is not used.
-
-パラメータで渡されたものをエスケープして、安全というマークを返します。
-これにより、Handlebarsでは"トリプルスラッシュ"を使用しなかったとしても、エスケープしようと試みません。 
+こうすることで、パラメータとして渡されたものをエスケープしながらも、結果には安全というマークを付与します。
+これにより、Handlebarsでは"トリプルスタッシュ"を使用しなかったとしても、エスケープしようと試みません。 
