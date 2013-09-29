@@ -1,3 +1,7 @@
+ +  元文書: [wycats/handlebars-site/expressions.haml · wycats/handlebars-site · GitHub]
+(https://github.com/wycats/handlebars-site/blob/master/src/pages/expressions.haml 
+"wycats/handlebars-site/expressions.haml · wycats/handlebars-site · GitHub")
+
 **Handlebars式はHandlebarsテンプレートの基本ユニットです。`{{mustache}}` の中で単独で使用して、Handlebars ヘルパーに渡したり、ハッシュ引数の中で使用することができます。**
 
 ## 基本的な使い方
